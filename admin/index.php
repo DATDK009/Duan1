@@ -4,6 +4,7 @@ include '../model/pdo.php';
 include '../model/danhmuc.php';
 include '../model/bill.php';
 include '../model/taikhoan.php';
+include '../model/binhluan.php';
 include 'header.php';
 
 if (isset($_GET['act'])) {
@@ -71,31 +72,19 @@ if (isset($_GET['act'])) {
                 $mota = $_POST['mota'];
                 $hinh = $_FILES['hinh']['name'];
                 $hinh1 = $_FILES['hinh1']['name'];
-                $hinh2 = $_FILES['hinh2']['name'];
-                $hinh3 = $_FILES['hinh3']['name'];
-                $hinh4 = $_FILES['hinh4']['name'];
+
                 $target_dir = '../upload/';
                 $target_file = $target_dir . basename($_FILES['hinh']['name']);
                 $target_file1 = $target_dir . basename($_FILES['hinh1']['name']);
-                $target_file2 = $target_dir . basename($_FILES['hinh2']['name']);
-                $target_file3 = $target_dir . basename($_FILES['hinh3']['name']);
-                $target_file4 = $target_dir . basename($_FILES['hinh4']['name']);
+
                 if (move_uploaded_file($_FILES['hinh']['tmp_name'], $target_file)) {
                 } else {
                 }
                 if (move_uploaded_file($_FILES['hinh1']['tmp_name'], $target_file1)) {
                 } else {
                 }
-                if (move_uploaded_file($_FILES['hinh2']['tmp_name'], $target_file2)) {
-                } else {
-                }
-                if (move_uploaded_file($_FILES['hinh3']['tmp_name'], $target_file3)) {
-                } else {
-                }
-                if (move_uploaded_file($_FILES['hinh4']['tmp_name'], $target_file4)) {
-                } else {
-                }
-                insert_sanpham($iddm, $tensp, $giasp, $mota, $hinh, $hinh1, $hinh2, $hinh3, $hinh4);
+ 
+                insert_sanpham($iddm, $tensp, $giasp, $mota, $hinh, $hinh1);
 
                 $thongbao = 'More success';
             }
@@ -142,31 +131,17 @@ if (isset($_GET['act'])) {
                 $mota = $_POST['mota'];
                 $hinh = $_FILES['hinh']['name'];
                 $hinh1 = $_FILES['hinh1']['name'];
-                $hinh2 = $_FILES['hinh2']['name'];
-                $hinh3 = $_FILES['hinh3']['name'];
-                $hinh4 = $_FILES['hinh4']['name'];
                 $target_dir = '../upload/';
                 $target_file = $target_dir . basename($_FILES['hinh']['name']);
                 $target_file1 = $target_dir . basename($_FILES['hinh1']['name']);
-                $target_file2 = $target_dir . basename($_FILES['hinh2']['name']);
-                $target_file3 = $target_dir . basename($_FILES['hinh3']['name']);
-                $target_file4 = $target_dir . basename($_FILES['hinh4']['name']);
+
                 if (move_uploaded_file($_FILES['hinh']['tmp_name'], $target_file)) {
                 } else {
                 }
                 if (move_uploaded_file($_FILES['hinh1']['tmp_name'], $target_file1)) {
                 } else {
                 }
-                if (move_uploaded_file($_FILES['hinh2']['tmp_name'], $target_file2)) {
-                } else {
-                }
-                if (move_uploaded_file($_FILES['hinh3']['tmp_name'], $target_file3)) {
-                } else {
-                }
-                if (move_uploaded_file($_FILES['hinh4']['tmp_name'], $target_file4)) {
-                } else {
-                }
-                updatedm_sanpham($id, $iddm, $tensp, $giasp, $mota, $hinh, $hinh1, $hinh2, $hinh3, $hinh4);
+                updatedm_sanpham($id, $iddm, $tensp, $giasp, $mota, $hinh, $hinh1);
                 // $thongbao = 'Cập nhật thành công';
             }
             $listdanhmuc = loadall_danhmuc();
@@ -230,7 +205,10 @@ if (isset($_GET['act'])) {
                 $listtaikhoan = loadall_taikhoan();
                 include 'taikhoan/list.php';
                 break;
-                
+            case 'binhluan':
+                $listbl = loadall_binhluan();
+            include 'binhluan/list.php';
+                break;
 }} else {
     include 'home.php';
 }

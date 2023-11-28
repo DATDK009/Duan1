@@ -526,24 +526,13 @@
             <div class="row">
                 <div class="col-md-12 text-center">
                     <div class="section-title">
-                        <h2 class="ec-bg-title">Our Top Collection</h2>
-                        <h2 class="ec-title">Our Top Collection</h2>
-                        <p class="sub-title">Browse The Collection of Top Products</p>
+                        <h2 class="ec-bg-title">Sản Phẩm đáng chú ý</h2>
+                        <h2 class="ec-title">Sản Phẩm đáng chú ý</h2>
+                        <p class="sub-title">Cùng Trải Nghiệm Sản Phẩm Của Chúng Tôi</p>
                     </div>
                 </div>
 
                 <!-- Tab Start -->
-                <div class="col-md-12 text-center">
-                    <ul class="ec-pro-tab-nav nav justify-content-center">
-                        <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab" href="#tab-pro-for-all">For
-                                All</a></li>
-                        <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#tab-pro-for-men">For
-                                Men</a></li>
-                        <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#tab-pro-for-women">For
-                                Women</a></li>
-
-                    </ul>
-                </div>
                 <!-- Tab End -->
 
 
@@ -665,30 +654,30 @@
             <div class="ec-banner-inner">
                 <!--ec Banner Start -->
                 <div class="ec-banner-block ec-banner-block-2">
-                    <div class="row">
+                    <div class="row" >
                         <div class="banner-block col-lg-6 col-md-12 margin-b-30" data-animation="slideInRight">
                             <div class="bnr-overlay">
-                                <img src="assets/images/banner/2.jpg" alt="" />
+                                <img src="upload/anh/gundam-dep-nhat-14.jpg" alt="" />
                                 <div class="banner-text">
                                     <span class="ec-banner-stitle">New Arrivals</span>
                                     <span class="ec-banner-title">mens<br> Sport shoes</span>
                                     <span class="ec-banner-discount">30% Discount</span>
                                 </div>
                                 <div class="banner-content">
-                                    <span class="ec-banner-btn"><a href="#">Order Now</a></span>
+                                    <span class="ec-banner-btn"><a href="#">Mua Ngay</a></span>
                                 </div>
                             </div>
                         </div>
                         <div class="banner-block col-lg-6 col-md-12" data-animation="slideInLeft">
                             <div class="bnr-overlay">
-                                <img src="assets/images/banner/3.jpg" alt="" />
+                                <img src="upload/anh/gundam-dep-nhat-14.jpg" alt="" />
                                 <div class="banner-text">
                                     <span class="ec-banner-stitle">New Trending</span>
                                     <span class="ec-banner-title">Smart<br> watches</span>
                                     <span class="ec-banner-discount">Buy any 3 Items & get <br>20% Discount</span>
                                 </div>
                                 <div class="banner-content">
-                                    <span class="ec-banner-btn"><a href="#">Order Now</a></span>
+                                    <span class="ec-banner-btn"><a href="#">Mua Ngay</a></span>
                                 </div>
                             </div>
                         </div>
@@ -801,15 +790,15 @@
         <div class="container">
             <div class="row">
                 <!--  Feature Section Start -->
-                <div class="ec-fre-section col-lg-6 col-md-6 col-sm-6 margin-b-30" data-animation="slideInRight">
+                <!-- <div class="ec-fre-section col-lg-6 col-md-6 col-sm-6 margin-b-30" data-animation="slideInRight">
                     <div class="col-md-12 text-left">
                         <div class="section-title">
                             <h2 class="ec-bg-title">Feature Items</h2>
                             <h2 class="ec-title">Feature Items</h2>
                         </div>
-                    </div>
+                    </div> -->
 
-                    <div class="ec-fre-products">
+                    <!-- <div class="ec-fre-products">
                         <div class="ec-fs-product">
                             <div class="ec-fs-pro-inner">
                                 <div class="ec-fs-pro-image-outer col-lg-6 col-md-6 col-sm-6">
@@ -894,11 +883,11 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <!--  Feature Section End -->
                 <!--  Special Section Start -->
-                <div class="ec-spe-section col-lg-6 col-md-6 col-sm-6" data-animation="slideInLeft">
+                <!-- <div class="ec-spe-section col-lg-6 col-md-6 col-sm-6" data-animation="slideInLeft">
                     <div class="col-md-12 text-left">
                         <div class="section-title">
                             <h2 class="ec-bg-title">Limited Time Offer</h2>
@@ -990,7 +979,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <!--  Special Section End -->
             </div>
         </div>
@@ -998,7 +987,7 @@
     <!-- Feature & Special Section End -->
 
     <!--  Top Vendor Section Start -->
-    <section class="section section-space-p" id="vendors">
+    <!-- <section class="section section-space-p" id="vendors">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center">
@@ -1177,11 +1166,11 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!--  Top Vendor Section End -->
 
     <!--  services Section Start -->
-    <section class="section ec-services-section section-space-p" id="services">
+    <!-- <section class="section ec-services-section section-space-p" id="services">
         <h2 class="d-none">Services</h2>
         <div class="container">
             <div class="row">
@@ -1231,11 +1220,11 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!--services Section End -->
 
     <!--  offer Section Start -->
-    <section class="section ec-offer-section section-space-p section-space-m">
+    <!-- <section class="section ec-offer-section section-space-p section-space-m">
         <h2 class="d-none">Offer</h2>
         <div class="container">
             <div class="row justify-content-end">
@@ -1250,11 +1239,11 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- offer Section End -->
 
     <!-- New Product Start -->
-    <section class="section ec-new-product section-space-p" id="arrivals">
+    <!-- <section class="section ec-new-product section-space-p" id="arrivals">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center">
@@ -1266,7 +1255,7 @@
                 </div>
             </div>
             <div class="row">
-                <!-- New Product Content -->
+                New Product Content
                 <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 mb-6  ec-product-content" data-animation="flipInY">
                     <div class="ec-product-inner">
                         <div class="ec-pro-image-outer">
@@ -1553,11 +1542,11 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- New Product end -->
 
     <!-- ec testmonial Start -->
-    <section class="section ec-test-section section-space-ptb-100 section-space-m" id="reviews">
+    <!-- <section class="section ec-test-section section-space-ptb-100 section-space-m" id="reviews">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center">
@@ -1644,11 +1633,11 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- ec testmonial end -->
 
     <!-- Ec Brand Section Start -->
-    <section class="section ec-brand-area section-space-p">
+    <!-- <section class="section ec-brand-area section-space-p">
         <h2 class="d-none">Brand</h2>
         <div class="container">
             <div class="row">
@@ -1690,7 +1679,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- Ec Brand Section End -->
 
     <!-- Ec Instagram Start -->

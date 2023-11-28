@@ -21,7 +21,7 @@
 				<div class="side-nav side-nav-transparent side-nav-expand">
 					<div class="side-nav-header">
 						<div class="logo px-6">
-							<img src="../view/img/logo/logo-light-full.png" alt="Elstar logo">
+							<img src="../view/img/logo/logo1.png" alt="Elstar logo">
 						</div>
 					</div>
 					<div class="side-nav-content relative side-nav-scroll">
@@ -38,14 +38,14 @@
 													d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z">
 												</path>
 											</svg>
-											<span class="menu-item-text">Home</span>
+											<span class="menu-item-text">Trang Chủ</span>
 										</div>
 										<ul>
 											<li data-menu-item="modern-project-dashboard" class="menu-item">
 												<i class="fa-regular fa-bell fa-sm"></i>
 												<a class="h-full w-full flex items-center"
 													href="index.php">
-													<span>Notification</span>
+													<span>Thông Báo</span>
 												</a>
 											</li>
 
@@ -60,13 +60,13 @@
 													d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z">
 												</path>
 											</svg>
-											<span class="menu-item-text">Account Management</span>
+											<span class="menu-item-text">Quản Lý Tài Khoản</span>
 										</div>
 										<ul>
 											<li data-menu-item="modern-customers" class="menu-item">
 												<i class="fa-solid fa-list-ul fa-sm"></i>
 												<a class="h-full w-full flex items-center" href="index.php?act=listtk">
-													<span>List Account</span>
+													<span>Danh sách tài khoản</span>
 												</a>
 											</li>
 										</ul>
@@ -74,14 +74,14 @@
 									<li class="menu-collapse">
 										<div class="menu-collapse-item">
 											<i class="fa-brands fa-pagelines fa-lg"></i>
-											<span class="menu-item-text">Product Management</span>
+											<span class="menu-item-text">Quản Lý Sản Phẩm</span>
 										</div>
 										<ul>
 											<li data-menu-item="modern-product-list" class="menu-item">
 												<i class="fa-solid fa-list-ul fa-sm"></i>
 												<a class="h-full w-full flex items-center"
 													href="index.php?act=listsp">
-													<span>List Product</span>
+													<span>Danh Sách Sản Phẩm</span>
 												</a>
 											</li>
 											
@@ -89,7 +89,7 @@
 												<i class="fa-solid fa-square-plus fa-sm"></i>
 												<a class="h-full w-full flex items-center"
 													href="index.php?act=addsp">
-													<span>New Product</span>
+													<span>Thêm Sản Phẩm</span>
 												</a>
 											</li>
 
@@ -98,14 +98,14 @@
 									<li class="menu-collapse">
 										<div class="menu-collapse-item">
 											<i class="fa-regular fa-folder fa-lg"></i>
-											<span class="menu-item-text">Category Management</span>
+											<span class="menu-item-text">Quản Lý Danh Mục</span>
 										</div>
 										<ul>
 											<li data-menu-item="modern-folder-list" class="menu-item">
 												<i class="fa-solid fa-list-ul fa-sm"></i>
 												<a class="h-full w-full flex items-center"
 													href="index.php?act=listdm">
-													<span>List Category</span>
+													<span>Danh Sách Danh Mục</span>
 												</a>
 											</li>
 											
@@ -113,7 +113,7 @@
 												<i class="fa-solid fa-square-plus fa-sm"></i>
 												<a class="h-full w-full flex items-center"
 													href="index.php?act=adddm">
-													<span>New Category</span>
+													<span>Thêm Danh Mục</span>
 												</a>
 											</li>
 											
@@ -134,13 +134,13 @@
 													d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z">
 												</path>
 											</svg>
-											<span class="menu-item-text">Contact management</span>
+											<span class="menu-item-text">Quản Lý Bình Luận</span>
 										</div>
 										<ul>
 											<li data-menu-item="modern-dialog" class="menu-item">
-												<i class="fa-solid fa-envelope-open-text fa-sm"></i>
-												<a class="h-full w-full flex items-center" href="modern-dialog.html">
-													<span>Mailbox</span>
+											<i class="fa-solid fa-comment"></i>
+												<a class="h-full w-full flex items-center" href="index.php?act=binhluan">
+													<span>Danh Sách Bình Luận</span>
 												</a>
 											</li>
 										</ul>
@@ -149,14 +149,14 @@
 									<li class="menu-collapse">
 										<div class="menu-collapse-item">
 											<i class="fa-solid fa-cart-shopping fa-lg"></i>
-											<span class="menu-item-text">Order Management</span>
+											<span class="menu-item-text">Quản Lý Đơn Hàng</span>
 										</div>
 										<ul>
 											<li data-menu-item="modern-order-list" class="menu-item">
 												<i class="fa-solid fa-wallet fa-sm"></i>
 												<a class="h-full w-full flex items-center"
 													href="index.php?act=dsdonhang">
-													<span>List Order</span>
+													<span>Danh Sách Đơn Hàng</span>
 												</a>
 											</li>
 										</ul>

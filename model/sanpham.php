@@ -1,7 +1,7 @@
 <?php
-function insert_sanpham($iddm,$tensp, $giasp, $mota,$hinh,$hinh1,$hinh2,$hinh3,$hinh4)
+function insert_sanpham($iddm,$tensp, $giasp, $mota,$hinh,$hinh1)
 {
-    $sql = "INSERT INTO sanpham (iddm,name,price,mota,img,img1,img2,img3,img4) VALUES ('$iddm','$tensp','$giasp','$mota','$hinh','$hinh1','$hinh2','$hinh3','$hinh4')";
+    $sql = "INSERT INTO sanpham (iddm,name,price,mota,img,img1) VALUES ('$iddm','$tensp','$giasp','$mota','$hinh','$hinh1')";
     pdo_execute($sql);
 }
 
@@ -59,10 +59,10 @@ function loadone_sanpham_cungloai($id,$iddm)
     $sp = pdo_query($sql);
     return $sp;
 }
-function updatedm_sanpham($id, $iddm,$tensp, $giasp, $mota,$hinh,$hinh1,$hinh2,$hinh3,$hinh4)
+function updatedm_sanpham($id, $iddm,$tensp, $giasp, $mota,$hinh,$hinh1)
 {
-    if (($hinh != "")||($hinh1 != "")||($hinh2 != "")||($hinh3 != "")||($hinh4 != ""))
-        $sql = "UPDATE sanpham SET `iddm`='" . $iddm . "',`name`='" . $tensp . "',`price`='" . $giasp . "',`mota`='" . $mota . "',`img`='" . $hinh . "',`img1`='" . $hinh1 . "',`img2`='" . $hinh2 . "',`img3`='" . $hinh3 . "',`img4`='" . $hinh4 . "' WHERE id=" . $id;
+    if (($hinh != "")||($hinh1 != ""))
+        $sql = "UPDATE sanpham SET `iddm`='" . $iddm . "',`name`='" . $tensp . "',`price`='" . $giasp . "',`mota`='" . $mota . "',`img`='" . $hinh . "',`img1`='" . $hinh1 . "' WHERE id=" . $id;
     else
         $sql = "UPDATE sanpham SET `iddm`='" . $iddm . "',`name`='" . $tensp . "',`price`='" . $giasp . "',`mota`='" . $mota . "' WHERE id=" . $id;
     pdo_execute($sql);

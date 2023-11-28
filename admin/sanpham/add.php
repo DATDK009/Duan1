@@ -126,10 +126,6 @@
                                                                     <!-- multiple -->
                                                                                 <input type="file"   name="hinh">
                                                                                 <input type="file"   name="hinh1">
-                                                                                <input type="file"   name="hinh2">
-                                                                                <input type="file"   name="hinh3">
-                                                                                <input type="file"   name="hinh4">
-                                                                                
                                                                     </div>
                                                                 </div>                                                                                                                        
                                                             </div>
