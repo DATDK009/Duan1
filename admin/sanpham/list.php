@@ -33,7 +33,7 @@
 															<th>Name Product</th>
 															<th>Image</th>
 															<th>price</th>
-															<th></th>
+															<th>Số Lượng</th>
 														</tr>
 													
 													<tbody>
@@ -55,7 +55,7 @@
                             <td>' . $name . '</td>
                             <td>' . $hinh . '</td>
                             <td>' . $price . '</td>
-                           
+							<td>' . $soluong . '</td>
                             <td>
 																<div class="flex justify-end text-lg">
 																<span

@@ -585,10 +585,13 @@ tr {
 }
 
 td {
+  width: 20px;
+  height: 20px;
   border-color: inherit;
   border-style: solid;
   border-width: 0;
 }
+
 
 label {
   display: inline-block;
@@ -632,7 +635,6 @@ input {
   line-height: 50px;
   height: 50px;
   font-size: 15px;
-  width: 100%;
   background: transparent;
   border-radius: 0;
   -webkit-border-radius: 0;
@@ -20297,10 +20299,10 @@ select::-ms-expand {
   margin: 0 auto 0;
 }
 .ec-login-wrapper .ec-login-container {
-  border: 1px solid #ededed;
+  border: 2px solid black;
   padding: 34px 38px 34px;
   text-align: left;
-  background-color: #fff;
+  background-color: #b9b9b9;
   border-radius: 5px;
 }
 .ec-login-wrapper .ec-login-container .ec-login-form form {
@@ -20314,7 +20316,7 @@ select::-ms-expand {
 }
 .ec-login-wrapper .ec-login-container .ec-login-form label {
   margin-bottom: 9px;
-  color: #444444;
+  color: whitesmoke;
   font-size: 15px;
   font-weight: 500;
   letter-spacing: 0;
@@ -20322,8 +20324,8 @@ select::-ms-expand {
 }
 .ec-login-wrapper .ec-login-container .ec-login-form input {
   background-color: transparent;
-  border: 1px solid #eeeeee;
-  color: #777;
+  border: 1.5px solid whitesmoke;
+  color: whitesmoke;
   font-size: 14px;
   margin-bottom: 27px;
   padding: 0 15px;

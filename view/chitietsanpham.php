@@ -1,26 +1,37 @@
 <style>
-    .box_content2{
-    padding:20px;
-    background:#EEEE;
-    border-left:1px solid #ccc;
-    border-right:1px solid #ccc;
-    border-bottom:1px solid #ccc;
-    border-bottom-left-radius:5px;
-    border-bottom-right-radius:5px;
-    min-height:200px;
-     
-}
-.box_search input{
-    margin-top:9px;
-padding:5px 10px;
-background-color:#ffff;
-border-radius:5px;
-border:1px #ccc solid;
-}
-.gui{
-    text-align: center;
-}
+    .ec-single-desc {
+        width: 770px;
+        text-align: center;
+    }
+    .box_content2 {
+        width: 100%;
+        min-height: 200px;
+        padding: 20px;
+        background: #EEEE;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-top: 20px;
+    }
+    .box_search input {
+        margin-top: 9px;
+        padding: 5px 10px;
+        background-color: #ffffff;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        margin-bottom: 10px;
+    }
+    .gui {
+        text-align: center;
+    }
+    input {
+        height: 40px;
+    }
+    .bl tr td {
+        padding: 10px;
+        width: 80px;
+    }
 </style>
+
 <!-- Sart Single product -->
 <section class="ec-page-content section-space-p">
         <div class="container">
@@ -36,8 +47,7 @@ border:1px #ccc solid;
                 $hinh = $img_path . $img;
                 $hinh1 = $img_path . $img1;
 
-                echo '
-
+?>
                     <!-- Single product content Start -->
                     <div class="single-pro-block">
                         <div class="single-pro-inner">
@@ -46,21 +56,21 @@ border:1px #ccc solid;
                                     <div class="single-product-scroll">
                                         <div class="single-product-cover">
                                             <div class="">
-                                                <img class="img-responsive" src="'.$hinh.'"
+                                                <img class="img-responsive" src="<?=$hinh ?>"
                                                     alt="" width="467px" height="400px" >
                                             </div>
                                             <div class="">
-                                                <img class="img-responsive" src="'.$hinh1.'"
+                                                <img class="img-responsive" src="<?=$hinh1 ?>"
                                                     alt=""width="467px" height="400px">
                                             </div>
                                         </div>
                                         <div class="single-nav-thumb">
                                             <div class="single-slide">
-                                                <img class="img-responsive" src="'.$hinh.'"
+                                                <img class="img-responsive" src="<?=$hinh ?>"
                                                     alt="" width="100px" height="70px">
                                             </div>
                                             <div class="single-slide">
-                                                <img class="img-responsive" src="'.$hinh1.'"
+                                                <img class="img-responsive" src="<?=$hinh1 ?>"
                                                     alt=""width="100px" height="70px">
                                             </div>
                                         </div>
@@ -68,24 +78,25 @@ border:1px #ccc solid;
                                 </div>
                                 <div class="single-pro-desc">
                                     <div class="single-pro-content">
-                                        <h5 class="ec-single-title">'.$name.'</h5>
-
-                                        <div class="ec-single-desc">'.$mota.'</div>
-                                       
+                                        <h5 class="ec-single-title"><?=$name ?></h5>
+                                        
+                                        <div class="ec-single-desc"><?=$mota ?></div>
+                                        <h5 class="single-price">số lượng còn lại: <?=$soluong ?></h5>
                                         <div class="ec-single-price-stoke">
                                             <div class="ec-single-price">
-                                                <span class="new-price" style="color:red;">$ '.$price.'</span>
+                                                <span class="new-price" style="color:red;"> <?=$price ?> VNĐ</span>
                                             </div>
                                             
                                         </div>
 
 
                                         <div class="ec-single-qty">
-                                            <div class="qty-plus-minus">
+                                            <!-- <div class="qty-plus-minus">
                                                 <input class="qty-input" type="text" name="ec_qtybtn" value="1" />
-                                            </div>
+                                            </div> -->
                                             <div class="ec-single-cart ">
-                                                <button class="btn btn-primary">Add To Cart</button>
+                                            <button class="add-to-cart"style=" background-color: #0099; padding:10px; color:	#ffffff"
+                                             data-id="<?= $id ?>" onclick="addToCart(<?= $id ?>,'<?= $name ?>',<?= $price ?>)" > Add To Cart</button>
                                             </div>
                                         </div>
                                         <div class="ec-single-social">
@@ -106,16 +117,15 @@ border:1px #ccc solid;
                         </div>
                     </div>
                     <!--Single product content End -->
-                    ';
-                ?>
+
                     <!-- Single product tab start -->
                     <div class="mb">
             <div class="box_title">BÌNH LUẬN</div>
             <div class="box_content2  product_portfolio binhluan ">
-                <table>
+                <table class="bl">
                     <?php foreach($binhluan as $value): ?>
                     <tr>
-                    <td><?php echo $value['user']?></td>
+                    <td> <?php  echo $value['user']?></td>
 
                         <td><?php echo $value['noidung']?></td>
                        
@@ -140,3 +150,28 @@ border:1px #ccc solid;
         </div>
     </section>
     <!-- End Single product -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>
+    let totalProduct = document.getElementById('totalProduct');
+    function addToCart(productId, productName, productPrice) {
+        // console.log(productId, productName, productPrice);
+        // Sử dụng jQuery
+        $.ajax({
+            type: 'POST',
+            // Đường dẫ tới tệp PHP xử lý dữ liệu
+            url: './view/addToCart.php',
+            data: {
+                id: productId,
+                name: productName,
+                price: productPrice
+            },
+            success: function(response) {
+                totalProduct.innerText = response;
+                alert('Bạn đã thêm sản phẩm vào giỏ hàng thành công!')
+            },
+            error: function(error) {
+                console.log(error);
+            }
+        });
+    }
+</script>

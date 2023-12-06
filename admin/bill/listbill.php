@@ -1,66 +1,170 @@
-<!-- Content start -->
-<main class="h-full">
-    <div class="page-container relative h-full flex flex-auto flex-col px-4 sm:px-6 md:px-8 py-4 sm:py-6">
-        <div class="container mx-auto">
-            <div class="card adaptable-card">
-                <div class="card-body">
-                    <div class="lg:flex items-center justify-between mb-4">
-                        <h3 class="mb-4 lg:mb-0">List Orders</h3>
-                    </div>
-                    <div class="overflow-x-auto">
-                        <table id="product-list-data-table" class="table-default table-hover data-table">
-                            <thead>
+<?php  
+// Kết nối cơ sở dữ liệu  
+$con = mysqli_connect('localhost', 'root', '', 'duan1');  
+
+// Lấy dữ liệu từ cơ sở dữ liệu  
+$sql = mysqli_query($con, "SELECT * FROM `tbl_order` ORDER BY `tbl_order`.`id_order` DESC"); 
+$listdonhang = mysqli_fetch_all($sql, MYSQLI_ASSOC);
+
+if (isset($_GET['id']) && isset($_GET['status'])) {  
+    $id = $_GET['id'];  
+    $status = $_GET['status'];  
+    mysqli_query($con, "update tbl_order set status='$status' where id_order='$id'");  
+    echo "<script>window.location = 'index.php?act=dsdonhang';</script>";
+    die();  
+}  
+?>    
+<style>
+    /* Định dạng bảng */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+/* Định dạng header của bảng */
+.table th {
+  background-color: #f2f2f2;
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+}
+
+/* Định dạng dòng chẵn của bảng */
+.table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Định dạng dòng lẻ của bảng */
+.table tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+/* Định dạng cột cuối cùng của bảng */
+.table td:last-child {
+  text-align: center;
+}
+
+/* Định dạng select box */
+.form-select-sm {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Định dạng button */
+.btn {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Định dạng button khi di chuột vào */
+.btn:hover {
+  background-color: #0056b3;
+}
+/* Định dạng phần tử cụ thể */
+.phan-tu-cu-the {
+  font-size: 16px;
+  color: #ff0000;
+  /* Thêm các thuộc tính CSS khác tại đây */
+}
+
+</style>
+<div class="content-wrapper">
+  <div class="content-header">
+    <div class="container-fluid">
+
+    <form action="<?= $_SERVER['REQUEST_URI'] ?>" method="POST">
+        <div class="card card-primary">
+            <div class="card-header">
+                <h3 class="card-title">Danh sách đơn hàng</h3>
+                </div>
+                <!-- Table start -->
+                <table class="table table-primary">
+                    <tr>                   
+                        <th></th>
+                        <th>STT</th>
+                       
+                        <th>Người đặt hàng</th>
+                        <th>Thông tin nhận</th>
+                        <th>Tổng cộng</th>
+                        <th>Ngày đặt hàng</th>
+                        <th>Trạng thái thanh toán</th>
+                        <th>Trạng thái</th>
+                        <th>Hành động</th>
+                    </tr>
+                    <?php
+                        foreach($listdonhang as $key => $order) {
+                            if($order['TrangthaiTT']==1)
+                            {
+                                $tt = "đã thanh toán";
+                            }else{
+                                $tt = "Chưa thanh toán";
+                            }
+                            ?>
                                 <tr>
-                                    <th>ID</th>
-                                    <th>Directory Code</th>
-                                    <th>Name Account</th>
-                                    <th>Product</th>
-                                    <th>Total</th>
-                                    <th>Date Order</th>
-                                    <th>Price</th>
+                                    <th value="<?= $order['id_order'] ?>" id=""></th>
+                                    <td><?= $key + 1 ?></td>
+                                    
+                                    <td><?= $order['hoten'] ?></td>
+                                    <td ><?= $order['hoten']."<br> ĐC: ".$order['diachi']."<br> SĐT: ".$order['sdt']."" ?></td>
+                                    <td class="phan-tu-cu-the" ><?= number_format($order['tongtien'],0,',','.') ?> VNĐ</td>
+                                    <td><?= date('d-m-Y H:i:s',strtotime($order['ngaydathang'])) ?></td>
+                                    <td><?= $tt ?></td>
+                                    <td>
+                                        <?php
+                                            switch ($order['status']) {
+                                                case '0':
+                                                    echo '<span style="color:#ff6547;">Hủy Đơn</span>';
+                                                 break;
+                                                 case '1':
+                                                    echo '<span style="color:#f39c12;">Chờ xác nhận</span>';
+                                                    break;
+                                                 case '2':
+                                                        echo '<span style="color:#f39c12;">Xác nhận đơn hàng</span>';
+                                                 break;
+                                                 case '3':
+                                                            echo '<span style="color:#3cb878;">Đang Vận Chuyển</span>';
+                                                  break;
+                                                  case '4':
+                                                    echo '<span style="color:#3cb878;">Đã Giao</span>';
+                                                   break;
+                                                   }
+
+                                        ?>
+                                    </td>
+                                    <td>
+                                    <select onchange="changeStatus(this.options[this.selectedIndex].value,'<?php echo $order['id_order'] ?>')"
+                                            class="form-select-sm selected_status" name="status"
+                                            >
+                                            <option value="">Trạng thái đơn</option>
+                                            <option value="1">Chờ Xác Nhận</option>
+                                            <option value="2">Xác nhận đơn hàng</option>
+                                            <option value="3">Đang Vận Chuyển</option>
+                                            <option value="4">Đã Giao</option>
+                                            <option value="0">Hủy Đơn</option>
+                                    </select>   
+                                    </td>
+                                    
                                 </tr>
-
-                            <tbody>
-                                <?php
-                                foreach ($listdonhang as $donhang) {
-                                    extract($donhang);
-                                    $xoadh = "index.php?act=xoadh&id=" . $id;
-
-
-                                    echo '<tr>
-                            
-                                        <td>' . $id . '</td>
-                                        <td>' . $id_bill . '</td>
-                                        <td>' . $username . '</td>
-                                        <td>' . $sanpham_bill . '</td>
-                                        <td>' . $so_luong . '</td>
-                                        <td>' . $ngaydathang . '</td>
-                                        <td>' . $total . '</td>  
-                           
-                                        <td>
-																<div class="flex justify-end text-lg">
-																	<span class="cursor-pointer p-2 hover:text-red-500">
-																		<a href="' . $xoadh . '"><svg stroke="currentColor" fill="none"
-																		stroke-width="2" viewBox="0 0 24 24"
-																		aria-hidden="true" height="1em" width="1em"
-																		xmlns="http://www.w3.org/2000/svg">
-																		<path stroke-linecap="round"
-																			stroke-linejoin="round"
-																			d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16">
-																		</path>
-																	</svg></a>
-																	</span>
-																</div>
-															</td>
-                                    </tr>';
-                                }
-                                ?>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                </div>
+                            <?php
+                        }
+                    ?>
+                </table>
+            </div>
         </div>
-    </div>
-</main>
-<!-- Content end -->
+    </form>
+  </div>
+</div>
+
+<script>
+    function changeStatus(value,id) {
+        // alert(value);
+        let url = "http://localhost/Duan1/admin/index.php?act=dsdonhang&";  
+           window.location.href= url+"id="+id+"&status="+value;  
+        }
+</script>

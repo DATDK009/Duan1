@@ -9,11 +9,11 @@
         $result =  pdo_query($sql);
         return $result;
     }
-    function insert_binhluan($idpro, $noidung){
+    function insert_binhluan($idpro, $noidung,$id_user){
         $date = date('Y-m-d');
         $sql = "
             INSERT INTO `binhluan`(`noidung`, `iduser`, `idpro`, `ngaybinhluan`,`is_hidden` ) 
-            VALUES ('$noidung','25','$idpro','$date','0');
+            VALUES ('$noidung','$id_user','$idpro','$date','0');
         ";
         //echo $sql;
         //die;

@@ -14,6 +14,11 @@
     color: #333;
 }
 
+/* .row {
+    background-color: azure
+} */
+
+
 h2.ec-title {
     font-size: 30px;
     margin-bottom: 20px;
@@ -36,7 +41,11 @@ input {
     border-radius: 5px;
     box-sizing: border-box;
 }
-
+li {
+    padding: 70px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
 .btn-primary,
 .btn-secondary {
     display: inline-block;
@@ -46,9 +55,12 @@ input {
     text-align: center;
     cursor: pointer;
 }
+.ec-login-form{
+    
+}
 
 .btn-primary {
-    background-color: #3474d4;
+    background-color: 0099FF;
     color: #fff;
 }
 
@@ -56,7 +68,9 @@ input {
     background-color: #ccc;
     color: #fff;
 }
-
+a{
+    font-size: 18;
+}
 </style>
 
 <section class="ec-page-content section-space-p">
@@ -68,7 +82,7 @@ input {
                         <h2 class="ec-title">Thông tin cá nhân</h2>
                         <br>
                        
-                        <img src="assets/images/logo/user.png" alt="" height="150px" with="150px">
+                        <img src="assets/images/logo/groot.jpg" alt="" height="120px" with="120px">
                     </div>
                 </div>
                 
@@ -102,8 +116,8 @@ input {
                                 </form>
                                 <span class="ec-login-wrap ec-login-btn">
                                     <div class="btn">
-                                    <a class="btn btn-primary" href="index.php?act=updatetk">Edit Profile</a>
-                                <a class="btn btn-primary" href="index.php?act=matkhau">Edit Password</a>
+                                   <li><a class="btn btn-primary" href="index.php?act=updatetk">Edit Profile</a></li> 
+                                    <li><a class="btn btn-primary" href="index.php?act=matkhau">Edit Password</a></li>
                                     </div>
                                     <!-- <a class="btn btn-primary" style="background-color:#3474d4;color:#FFFFFF" type="submit" value="Edit Profile" name=""></a> -->
                                     <!-- <a href="#!" class="btn btn-secondary">Register</a> -->
@@ -114,9 +128,9 @@ input {
                     </div>
                 </div>
             </div>
-            <div class="danhsach">
+            <!-- <div class="danhsach">
             <h1>Quản Lý Đơn Hàng</h1>
-        </div>
+        </div> -->
         </div>
         
     </section>

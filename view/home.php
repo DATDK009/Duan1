@@ -1,5 +1,6 @@
-    <!-- ekka Cart Start -->
-    <div class="ec-side-cart-overlay"></div>
+
+   <!-- ekka Cart Start -->
+    <!-- <div class="ec-side-cart-overlay"></div>
     <div id="ec-side-cart" class="ec-side-cart">
         <div class="ec-cart-inner">
             <div class="ec-cart-top">
@@ -47,7 +48,7 @@
                 </ul>
             </div>
             <div class="ec-cart-bottom">
-                <!-- <div class="cart-sub-total">
+                <div class="cart-sub-total">
                     <table class="table cart-table">
                         <tbody>
                             <tr>
@@ -64,14 +65,14 @@
                             </tr>
                         </tbody>
                     </table>
-                </div> -->
+                </div>
                 <div class="cart_btn">
                     <a href="cart.php" class="btn btn-primary">View Cart</a>
                     <a href="checkout.html" class="btn btn-secondary">Checkout</a>
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- ekka Cart End -->
 
     <!-- Category Sidebar start -->
@@ -81,7 +82,7 @@
             <div class="cat-sidebar-box">
                 <div class="ec-sidebar-wrap">
                     <!-- Sidebar Category Block -->
-                    <div class="ec-sidebar-block">
+                    <!-- <div class="ec-sidebar-block">
                         <div class="ec-sb-title">
                             <h3 class="ec-sidebar-title">Category<button class="ec-close">×</button></h3>
                         </div>
@@ -302,11 +303,12 @@
                                 </li>
                             </ul>
                         </div>
-                    </div>
+                    </div> -->
                     <!-- Sidebar Category Block -->
                 </div>
             </div>
-            <div class="ec-sidebar-slider-cat">
+            <!-- Hiển thị sản phẩm top 10 -->
+            <!-- <div class="ec-sidebar-slider-cat">
                 <div class="ec-sb-slider-title">Best Sellers</div>
                 <div class="ec-sb-pro-sl">
                     <div>
@@ -473,7 +475,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 
@@ -487,10 +489,9 @@
                         <div class="row">
                             <div class="col-xl-6 col-lg-7 col-md-7 col-sm-7 align-self-center">
                                 <div class="ec-slide-content slider-animation">
-                                    <h1 class="ec-slide-title">New Fashion Collection</h1>
-                                    <h2 class="ec-slide-stitle">Sale Offer</h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>
-                                    <a href="#" class="btn btn-lg btn-secondary">Order Now</a>
+                                    <h1 class="ec-slide-title">Sản Phẩm Mới</h1>
+                                    <h2 class="ec-slide-stitle">Top 1 thịnh hành</h2>
+                                    <a href="?act=sanpham" class="btn btn-lg btn-secondary">Đặt ngay</a>
                                 </div>
                             </div>
                         </div>
@@ -501,10 +502,9 @@
                         <div class="row">
                             <div class="col-xl-6 col-lg-7 col-md-7 col-sm-7 align-self-center">
                                 <div class="ec-slide-content slider-animation">
-                                    <h1 class="ec-slide-title">Boat Headphone Sets</h1>
-                                    <h2 class="ec-slide-stitle">Sale Offer</h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>
-                                    <a href="#" class="btn btn-lg btn-secondary">Order Now</a>
+                                    <h1 class="ec-slide-title">Mô hình chính hãng</h1>
+                                    <h2 class="ec-slide-stitle">Bản giới hạn</h2>
+                                    <a href="?act=sanpham" class="btn btn-lg btn-secondary">Đặt ngay</a>
                                 </div>
                             </div>
                         </div>
@@ -536,21 +536,6 @@
                 <!-- Tab End -->
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             </div>
             <div class="row">
                 <div class="col">
@@ -566,29 +551,26 @@
                 $linksp = "index.php?act=chitiet&idsp=" . $id;
                 $hinh = $img_path . $img;
                 $hinh1 = $img_path . $img1;
+                $priceo = $price + $price*0.2;
                 if (($i == 3) || ($i == 8) || ($i ==12)) {
                     $mr = "";
                 } else {
                     $mr = "mr";
                 }
-                echo '
-                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 mb-6  ec-product-content ' . $mr . '"
+                ?>
+                <div style="width:280px ; padding:0 auto;" class="col-lg-3 col-md-6 col-sm-6 col-xs-6 mb-6  ec-product-content ' . $mr . '"
                                     data-animation="fadeIn">
                                     <div class="ec-product-inner">
                                         <div class="ec-pro-image-outer">
                                             <div class="ec-pro-image">
-                                                <a href="'.$linksp.'" class="image">
-                                                    <img class="main-image" src="'.$hinh.'" alt="Product" />
-                                                    <img class="hover-image" src="'.$hinh1.'" alt="Product" />
+                                                <a href=" <?= $linksp ?> " class="image">
+                                                    <img class="main-image" src="<?= $hinh ?>" alt="Product" />
+                                                    <img class="hover-image" src="<?= $hinh1 ?>" alt="Product" />
                                                 </a>
-                                                <span class="percentage">20%</span>
-                                                <a href="#" class="quickview" data-link-action="quickview"
-                                                    title="Quick view" data-bs-toggle="modal"
-                                                    data-bs-target="#ec_quickview_modal"><i class="fi-rr-eye"></i></a>
+                                                <span class="percentage">New</span>
+
                                                 <div class="ec-pro-actions">
-                                                    <a href="compare.html" class="ec-btn-group compare"
-                                                        title="Compare"><i class="fi fi-rr-arrows-repeat"></i></a>
-                                                    <button title="Add To Cart" class="add-to-cart"><i
+                                                    <button class="add-to-cart" data-id="<?= $id ?>" onclick="addToCart(<?= $id ?>,'<?= $name ?>',<?= $price ?>)" ><i
                                                             class="fi-rr-shopping-basket"></i> Add To Cart</button>
                                                     <a class="ec-btn-group wishlist" title="Wishlist"><i
                                                             class="fi-rr-heart"></i></a>
@@ -596,7 +578,7 @@
                                             </div>
                                         </div>
                                         <div class="ec-pro-content">
-                                            <h5 class="ec-pro-title"><a href="'.$linksp.'">'.$name.'</a></h5>
+                                            <h5 class="ec-pro-title"><a href="<?= $linksp ?>"><?= $name ?></a></h5>
                                             <div class="ec-pro-rating">
                                                 <i class="ecicon eci-star fill"></i>
                                                 <i class="ecicon eci-star fill"></i>
@@ -605,35 +587,22 @@
                                                 <i class="ecicon eci-star"></i>
                                             </div>
                                             <span class="ec-price">
-                                                <span class="old-price">$27.00</span>
-                                                <span class="new-price">'.$price.'</span>
+                                                <span class="old-price"><?= $priceo ?> VNĐ</span>
+                                                <span class="new-price" style="color:red;"> <?= $price ?> VNĐ</span>
                                             </span>
                                             <div class="ec-pro-option">
                                                 <div class="ec-pro-color">
                                                     <span class="ec-pro-opt-label">Color</span>
 
                                                 </div>
-                                                <div class="ec-pro-size">
-                                                    <span class="ec-pro-opt-label">Size</span>
-                                                    <ul class="ec-opt-size">
-                                                        <li class="active"><a href="#" class="ec-opt-sz"
-                                                                data-old="$25.00" data-new="'.$price.'"
-                                                                data-tooltip="Small">S</a></li>
-                                                        <li><a href="#" class="ec-opt-sz" data-old="$27.00"
-                                                                data-new="'.$price.'" data-tooltip="Medium">M</a></li>
-                                                        <li><a href="#" class="ec-opt-sz" data-old="$30.00"
-                                                                data-new="'.$price.'" data-tooltip="Large">X</a></li>
-                                                        <li><a href="#" class="ec-opt-sz" data-old="$35.00"
-                                                                data-new="'.$price.'" data-tooltip="Extra Large">XL</a></li>
-                                                    </ul>
-                                                </div>
+                                                
                                             </div>
                                         </div>
                                     </div>
                                 </div>
 
             
-            ';
+            <?php
                 $i += 1;
             }
             ?>
@@ -656,8 +625,9 @@
                 <div class="ec-banner-block ec-banner-block-2">
                     <div class="row" >
                         <div class="banner-block col-lg-6 col-md-12 margin-b-30" data-animation="slideInRight">
-                            <div class="bnr-overlay">
-                                <img src="upload/anh/gundam-dep-nhat-14.jpg" alt="" />
+                            <div class="bnr-overlay" style="width : 670px ;">
+                                <img src="upload/anh/images (12).jpg " style="width : 670px ;"   alt="" >
+                                <!-- <img src="upload/anh/gundam-dep-nhat-14.jpg" alt="" /> -->
                                 <div class="banner-text">
                                     <span class="ec-banner-stitle">New Arrivals</span>
                                     <span class="ec-banner-title">mens<br> Sport shoes</span>
@@ -669,8 +639,8 @@
                             </div>
                         </div>
                         <div class="banner-block col-lg-6 col-md-12" data-animation="slideInLeft">
-                            <div class="bnr-overlay">
-                                <img src="upload/anh/gundam-dep-nhat-14.jpg" alt="" />
+                            <div class="bnr-overlay" style="width : 670px ;">
+                                <img src="upload/anh/images (11).jpg" alt="" style="width : 670px ;" />
                                 <div class="banner-text">
                                     <span class="ec-banner-stitle">New Trending</span>
                                     <span class="ec-banner-title">Smart<br> watches</span>
@@ -708,27 +678,35 @@
                 <div class="col-lg-3">
                     <ul class="ec-cat-tab-nav nav">
                         <li class="cat-item"><a class="cat-link active" data-bs-toggle="tab" href="#tab-cat-1">
-                                <div class="cat-icons"><img class="cat-icon" src="assets/images/icons/cat_1.png"
+                                <div class="cat-icons">
+                                    <img class="cat-icon" src="assets/images/icons/cat_1.png"
                                         alt="cat-icon"><img class="cat-icon-hover" src="assets/images/icons/cat_1_1.png"
-                                        alt="cat-icon"></div>
+                                        alt="cat-icon">
+                                    </div>
                                 <div class="cat-desc"><span>Clothes</span><span>440 Products</span></div>
                             </a></li>
                         <li class="cat-item"><a class="cat-link" data-bs-toggle="tab" href="#tab-cat-2">
-                                <div class="cat-icons"><img class="cat-icon" src="assets/images/icons/cat_2.png"
+                                <div class="cat-icons">
+                                    <img class="cat-icon" src="assets/images/icons/cat_2.png"
                                         alt="cat-icon"><img class="cat-icon-hover" src="assets/images/icons/cat_2_1.png"
-                                        alt="cat-icon"></div>
+                                        alt="cat-icon">
+                                    </div>
                                 <div class="cat-desc"><span>Watches</span><span>510 Products</span></div>
                             </a></li>
                         <li class="cat-item"><a class="cat-link" data-bs-toggle="tab" href="#tab-cat-3">
-                                <div class="cat-icons"><img class="cat-icon" src="assets/images/icons/cat_3.png"
+                                <div class="cat-icons">
+                                    <img class="cat-icon" src="assets/images/icons/cat_3.png"
                                         alt="cat-icon"><img class="cat-icon-hover" src="assets/images/icons/cat_3_1.png"
-                                        alt="cat-icon"></div>
+                                        alt="cat-icon">
+                                    </div>
                                 <div class="cat-desc"><span>Bags</span><span>620 Products</span></div>
                             </a></li>
                         <li class="cat-item"><a class="cat-link" data-bs-toggle="tab" href="#tab-cat-4">
-                                <div class="cat-icons"><img class="cat-icon" src="assets/images/icons/cat_4.png"
+                                <div class="cat-icons">
+                                    <img class="cat-icon" src="assets/images/icons/cat_4.png"
                                         alt="cat-icon"><img class="cat-icon-hover" src="assets/images/icons/cat_4_1.png"
-                                        alt="cat-icon"></div>
+                                        alt="cat-icon">
+                                    </div>
                                 <div class="cat-desc"><span>Shoes</span><span>320 Products</span></div>
                             </a></li>
                     </ul>
@@ -741,7 +719,7 @@
                         <!-- 1st Category tab end -->
                         <div class="tab-pane fade show active" id="tab-cat-1">
                             <div class="row">
-                                <img src="assets/images/cat-banner/1.jpg" alt="" />
+                                <img src="upload/anh/anh2.webp" alt="" />
                             </div>
                             <span class="panel-overlay">
                                 <a href="shop-left-sidebar-col-3.html" class="btn btn-primary">View All</a>
@@ -750,7 +728,7 @@
                         <!-- 1st Category tab end -->
                         <div class="tab-pane fade" id="tab-cat-2">
                             <div class="row">
-                                <img src="assets/images/cat-banner/2.jpg" alt="" />
+                                <img src="upload/anh/images (13).jpg" alt="" />
                             </div>
                             <span class="panel-overlay">
                                 <a href="shop-left-sidebar-col-3.html" class="btn btn-primary">View All</a>
@@ -760,7 +738,7 @@
                         <!-- 3rd Category tab start -->
                         <div class="tab-pane fade" id="tab-cat-3">
                             <div class="row">
-                                <img src="assets/images/cat-banner/3.jpg" alt="" />
+                                <img src="upload/anh/images (14).jpg" alt="" />
                             </div>
                             <span class="panel-overlay">
                                 <a href="shop-left-sidebar-col-3.html" class="btn btn-primary">View All</a>
@@ -770,7 +748,7 @@
                         <!-- 4th Category tab start -->
                         <div class="tab-pane fade" id="tab-cat-4">
                             <div class="row">
-                                <img src="assets/images/cat-banner/4.jpg" alt="" />
+                                <img src="upload/anh/images (15).jpg" alt="" />
                             </div>
                             <span class="panel-overlay">
                                 <a href="shop-left-sidebar-col-3.html" class="btn btn-primary">View All</a>
@@ -1688,9 +1666,9 @@
             <div class="row">
                 <div class="col-md-12 text-center">
                     <div class="section-title">
-                        <h2 class="ec-bg-title">Instagram Feed</h2>
-                        <h2 class="ec-title">Instagram Feed</h2>
-                        <p class="sub-title">Share your store with us</p>
+                        <h2 class="ec-bg-title">Mẫu Mới Của Chúng Tôi</h2>
+                        <h2 class="ec-title">Mẫu Mới Của Chúng Tôi</h2>
+                        <p class="sub-title">Xin Giới Thiệu Tới Mọi Người</p>
                     </div>
                 </div>
             </div>
@@ -1702,53 +1680,53 @@
                         <!-- instagram item -->
                         <div class="ec-insta-item">
                             <div class="ec-insta-inner">
-                                <a href="#" target="_blank"><img src="assets/images/instragram-image/1.jpg"
-                                        alt="insta"></a>
+                                <img src="upload/anh/images (1).jpg"
+                                        alt="">
                             </div>
                         </div>
                         <!-- instagram item -->
                         <div class="ec-insta-item">
                             <div class="ec-insta-inner">
-                                <a href="#" target="_blank"><img src="assets/images/instragram-image/2.jpg"
-                                        alt="insta"></a>
+                                <img src="upload/anh/images (2).jpg"
+                                        alt="">
                             </div>
                         </div>
                         <!-- instagram item -->
                         <div class="ec-insta-item">
                             <div class="ec-insta-inner">
-                                <a href="#" target="_blank"><img src="assets/images/instragram-image/3.jpg"
-                                        alt="insta"></a>
+                                <img src="upload/anh/images (4).jpg"
+                                        alt="">
                             </div>
                         </div>
                         <!-- instagram item -->
                         <div class="ec-insta-item">
                             <div class="ec-insta-inner">
-                                <a href="#" target="_blank"><img src="assets/images/instragram-image/4.jpg"
-                                        alt="insta"></a>
-                            </div>
-                        </div>
-                        <!-- instagram item -->
-                        <!-- instagram item -->
-                        <div class="ec-insta-item">
-                            <div class="ec-insta-inner">
-                                <a href="#" target="_blank"><img src="assets/images/instragram-image/5.jpg"
-                                        alt="insta"></a>
+                                <img src="upload/anh/images (5).jpg"
+                                        alt="">
                             </div>
                         </div>
                         <!-- instagram item -->
                         <!-- instagram item -->
                         <div class="ec-insta-item">
                             <div class="ec-insta-inner">
-                                <a href="#" target="_blank"><img src="assets/images/instragram-image/6.jpg"
-                                        alt="insta"></a>
+                               <img src="upload/anh/images (3).jpg"
+                                        alt="">
                             </div>
                         </div>
                         <!-- instagram item -->
                         <!-- instagram item -->
                         <div class="ec-insta-item">
                             <div class="ec-insta-inner">
-                                <a href="#" target="_blank"><img src="assets/images/instragram-image/7.jpg"
-                                        alt="insta"></a>
+                               <img src="upload/anh/images (7).jpg"
+                                        alt="">
+                            </div>
+                        </div>
+                        <!-- instagram item -->
+                        <!-- instagram item -->
+                        <div class="ec-insta-item">
+                            <div class="ec-insta-inner">
+                                <img src="upload/anh/images (8).jpg"
+                                        alt="">
                             </div>
                         </div>
                         <!-- instagram item -->
@@ -1757,3 +1735,28 @@
             </div>
         </div>
     </section>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>
+    let totalProduct = document.getElementById('totalProduct');
+    function addToCart(productId, productName, productPrice) {
+        // console.log(productId, productName, productPrice);
+        // Sử dụng jQuery
+        $.ajax({
+            type: 'POST',
+            // Đường dẫ tới tệp PHP xử lý dữ liệu
+            url: './view/addToCart.php',
+            data: {
+                id: productId,
+                name: productName,
+                price: productPrice
+            },
+            success: function(response) {
+                totalProduct.innerText = response;
+                alert('Bạn đã thêm sản phẩm vào giỏ hàng thành công!')
+            },
+            error: function(error) {
+                console.log(error);
+            }
+        });
+    }
+</script>

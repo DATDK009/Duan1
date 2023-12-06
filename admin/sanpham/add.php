@@ -100,7 +100,7 @@
                                                                             <label class="form-label mb-2"></label>
                                                                             <div>
                                                                                 <span class="input-wrapper undefined">
-                                                                                    <div class="input-suffix-start"> $</div>
+                                                                                    <div class="input-suffix-end"> VND </div>
                                                                                     <input
                                                                                         class="input pl-8"
                                                                                         type="number"
@@ -116,6 +116,31 @@
                                                             </div>
                                                         </div>
                                                         
+                                                        <div class="card adaptable-card !border-b pb-6 py-4 rounded-br-none rounded-bl-none">
+                                                            <div class="card-body">
+                                                                <h5>Số Lượng</h5>
+                                                                
+                                                                    <div class="col-span-1">
+                                                                        <div class="form-item vertical">
+                                                                            <label class="form-label mb-2"></label>
+                                                                            <div>
+                                                                                <span class="input-wrapper undefined">
+                                                                                    <div class="input-suffix-start"> Sl </div>
+                                                                                    <input
+                                                                                        class="input pl-8"
+                                                                                        type="number" min=1
+                                                                                        name="soluong"
+                                                                                        
+                                                                                    >
+                                                                                </span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                                                                               
+                                                            </div>
+                                                        </div>
+
                                                     <div class="lg:col-span-1">
                                                         <div class="card adaptable-card mb-4">
                                                             <div class="card-body">

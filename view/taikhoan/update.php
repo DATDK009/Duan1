@@ -16,7 +16,7 @@
                         <p class="sub-title mb-3"> Edit Your Personal Information</p>
                         <br>
                        
-                        <img src="assets/images/logo/user.png" alt="" height="150px" with="150px">
+                        <img src="assets/images/logo/groot.jpg" alt="" height="150px" with="150px">
                         
                     </div>
                 </div>
@@ -52,7 +52,7 @@
                                     
                                     </div>
                                     <input type="hidden" name="id" value="<?=$id?>">
-                                    <input class="btn btn-primary" style="background-color:#3474d4;color:#FFFFFF" type="submit" value="Update Profile" name="capnhat">
+                                   <li> <input class="btn btn-primary" style="background-color:#3474d4;color:#FFFFFF;width: 200px;" type="submit" value="Update Profile" name="capnhat"></li>
                                     <!-- <a href="#!" class="btn btn-secondary">Register</a> -->
                                     <!-- <input class="btn btn-primary" style="background-color:#3474d4;color:#FFFFFF" type="submit" value="Edit Password" name=""> -->
                                 </span>

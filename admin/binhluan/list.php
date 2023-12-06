@@ -25,8 +25,8 @@
 												<h3 class="mb-4 lg:mb-0">ACCOUNT LIST</h3>
 											</div>
 											<div class="overflow-x-auto">
-												<table id="product-list-data-table"
-													class="table-default table-hover data-table">
+											<table id="product-list-data-table" class="table-default table-hover data-table">
+  <!-- nội dung bảng -->
 													<thead>
 														<tr>
 														<th>ID</th>
@@ -53,12 +53,18 @@
                     <td>' . $name . '</td>
                     <td>' . $noidung . '</td>
                     <td>' . $ngaybinhluan . '</td>
-                    <td>Chức năng đang nghiên cứu và phát triển thêm</td>
+                    <td><select id="commentVisibility" onchange="toggleComments()">
+					<option value="show">Hiển thị bình luận</option>
+					<option value="hide">Ẩn bình luận</option>
+				  </select>
+				  </td>
                         </tr>';
                 }
                 ?>
 													</tbody>
-													</table>
+												</table>
+
+									
 											</div>
 										</div>
 									</div>
@@ -69,3 +75,15 @@
 						<!-- Content end -->
 </body>
 </html>
+<script>
+  function toggleComments() {
+    var visibility = document.getElementById("commentVisibility").value;
+    var commentsTable = document.getElementById("product-list-data-table");
+    
+    if (visibility === "show") {
+      commentsTable.style.display = "table";
+    } else {
+      commentsTable.style.display = "none";
+    }
+  }
+</script>

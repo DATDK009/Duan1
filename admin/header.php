@@ -44,8 +44,8 @@
 											<li data-menu-item="modern-project-dashboard" class="menu-item">
 												<i class="fa-regular fa-bell fa-sm"></i>
 												<a class="h-full w-full flex items-center"
-													href="index.php">
-													<span>Thông Báo</span>
+													href="index.php?act=thongke">
+													<span>Thống kê</span>
 												</a>
 											</li>
 

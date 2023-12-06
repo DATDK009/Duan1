@@ -15,17 +15,17 @@
                     <div class="row">
                         <div class="col-sm-12 col-lg-3 ec-footer-contact">
                             <div class="ec-footer-widget">
-                                <div class="ec-footer-logo"><a href="#"><img src="assets/images/logo/footer-logo.png"
-                                            alt=""><img class="dark-footer-logo" src="assets/images/logo/dark-logo.png"
+                                <div class="ec-footer-logo"><a href="#"><img src="assets/images/logo/logo1.png"
+                                            alt=""><img class="dark-footer-logo" src="assets/images/logo/logo1.png"
                                             alt="Site Logo" style="display: none;" /></a></div>
                                 <h4 class="ec-footer-heading">Contact us</h4>
                                 <div class="ec-footer-links">
                                     <ul class="align-items-center">
-                                        <li class="ec-footer-link">71 Pilgrim Avenue Chevy Chase, east california.</li>
-                                        <li class="ec-footer-link"><span>Call Us:</span><a href="tel:+440123456789">+44
+                                        <li class="ec-footer-link">Cao Đăng FPT POLYTECHNIC</li>
+                                        <li class="ec-footer-link"><span>Call Us:</span><a href="0110001111">+84
                                                 0123 456 789</a></li>
                                         <li class="ec-footer-link"><span>Email:</span><a
-                                                href="mailto:example@ec-email.com">+example@ec-email.com</a></li>
+                                                href="mailto:example@ec-email.com">datntph@gmail.com</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -49,10 +49,8 @@
                                 <h4 class="ec-footer-heading">Account</h4>
                                 <div class="ec-footer-links">
                                     <ul class="align-items-center">
-                                        <li class="ec-footer-link"><a href="user-profile.html">My Account</a></li>
-                                        <li class="ec-footer-link"><a href="track-order.html">Order History</a></li>
-                                        <li class="ec-footer-link"><a href="wishlist.html">Wish List</a></li>
-                                        <li class="ec-footer-link"><a href="offer.html">Specials</a></li>
+                                        <li class="ec-footer-link"><a href="index.php?act=profile">My Account</a></li>
+                                        <li class="ec-footer-link"><a href="index.php?act=donhang">Order History</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -145,29 +143,20 @@
     <!-- Footer Area End -->
 
     <!-- Modal -->
-    <div class="modal fade" id="ec_quickview_modal" tabindex="-1" role="dialog">
+    <!-- <div class="modal fade" id="ec_quickview_modal" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <button type="button" class="btn-close qty_close" data-bs-dismiss="modal" aria-label="Close"></button>
                 <div class="modal-body">
                     <div class="row">
-                        <div class="col-md-5 col-sm-12 col-xs-12">
+                        <div class="col-md-5 col-sm-12 col-xs-12"> -->
                             <!-- Swiper -->
-                            <div class="qty-product-cover">
+                            <!-- <div class="qty-product-cover">
                                 <div class="qty-slide">
                                     <img class="img-responsive" src="assets/images/product-image/3_1.jpg" alt="">
                                 </div>
                                 <div class="qty-slide">
                                     <img class="img-responsive" src="assets/images/product-image/3_2.jpg" alt="">
-                                </div>
-                                <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_3.jpg" alt="">
-                                </div>
-                                <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_4.jpg" alt="">
-                                </div>
-                                <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_5.jpg" alt="">
                                 </div>
                             </div>
                             <div class="qty-nav-thumb">
@@ -176,15 +165,6 @@
                                 </div>
                                 <div class="qty-slide">
                                     <img class="img-responsive" src="assets/images/product-image/3_2.jpg" alt="">
-                                </div>
-                                <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_3.jpg" alt="">
-                                </div>
-                                <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_4.jpg" alt="">
-                                </div>
-                                <div class="qty-slide">
-                                    <img class="img-responsive" src="assets/images/product-image/3_5.jpg" alt="">
                                 </div>
                             </div>
                         </div>
@@ -222,18 +202,6 @@
                                             </ul>
                                         </div>
                                     </div>
-                                    <div class="ec-pro-variation-inner ec-pro-variation-size ec-pro-size">
-                                        <span>Size</span>
-                                        <div class="ec-pro-variation-content">
-                                            <ul class="ec-opt-size">
-                                                <li class="active"><a href="#" class="ec-opt-sz"
-                                                        data-tooltip="Small">S</a></li>
-                                                <li><a href="#" class="ec-opt-sz" data-tooltip="Medium">M</a></li>
-                                                <li><a href="#" class="ec-opt-sz" data-tooltip="Large">X</a></li>
-                                                <li><a href="#" class="ec-opt-sz" data-tooltip="Extra Large">XL</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
                                 </div>
                                 <div class="ec-quickview-qty">
                                     <div class="qty-plus-minus">
@@ -249,7 +217,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Modal end -->
 
     <!-- Newsletter Modal Start -->
@@ -286,13 +254,6 @@
     <!-- Footer navigation panel for responsive display end -->
 
     <!-- Cart Floating Button -->
-    <div class="ec-cart-float">
-        <a href="#ec-side-cart" class="ec-header-btn ec-side-toggle">
-            <div class="header-icon"><i class="fi-rr-shopping-basket"></i>
-            </div>
-            <span class="ec-cart-count cart-count-lable">3</span>
-        </a>
-    </div>
     <!-- Cart Floating Button end -->
     <!-- Vendor JS -->
     <script src="assets/js/vendor/jquery-3.5.1.min.js"></script>

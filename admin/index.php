@@ -1,12 +1,12 @@
 <?php
-include '../model/sanpham.php';
 include '../model/pdo.php';
+include '../model/sanpham.php';
 include '../model/danhmuc.php';
 include '../model/bill.php';
 include '../model/taikhoan.php';
 include '../model/binhluan.php';
+include '../model/thongke.php';
 include 'header.php';
-
 if (isset($_GET['act'])) {
 
     $act = $_GET['act'];
@@ -69,6 +69,7 @@ if (isset($_GET['act'])) {
                 $iddm = $_POST['iddm'];
                 $tensp = $_POST['tensp'];
                 $giasp = $_POST['price'];
+                $soluong = $_POST['soluong'];
                 $mota = $_POST['mota'];
                 $hinh = $_FILES['hinh']['name'];
                 $hinh1 = $_FILES['hinh1']['name'];
@@ -84,7 +85,7 @@ if (isset($_GET['act'])) {
                 } else {
                 }
  
-                insert_sanpham($iddm, $tensp, $giasp, $mota, $hinh, $hinh1);
+                insert_sanpham($iddm, $tensp, $giasp,$soluong, $mota, $hinh, $hinh1);
 
                 $thongbao = 'More success';
             }
@@ -129,6 +130,7 @@ if (isset($_GET['act'])) {
                 $tensp = $_POST['tensp'];
                 $giasp = $_POST['price'];
                 $mota = $_POST['mota'];
+                $soluong = $_POST['soluong'];
                 $hinh = $_FILES['hinh']['name'];
                 $hinh1 = $_FILES['hinh1']['name'];
                 $target_dir = '../upload/';
@@ -141,7 +143,7 @@ if (isset($_GET['act'])) {
                 if (move_uploaded_file($_FILES['hinh1']['tmp_name'], $target_file1)) {
                 } else {
                 }
-                updatedm_sanpham($id, $iddm, $tensp, $giasp, $mota, $hinh, $hinh1);
+                updatedm_sanpham($id, $iddm, $tensp, $giasp, $mota, $hinh, $hinh1,$soluong);
                 // $thongbao = 'Cập nhật thành công';
             }
             $listdanhmuc = loadall_danhmuc();
@@ -155,14 +157,20 @@ if (isset($_GET['act'])) {
             $listdonhang = loadall_donhang();
             include 'bill/listbill.php';
             break;
+        // case 'status':
+        //         $id = $_GET['id_order'];
+        //         $status = $_GET['status'];
+        //         update_donhang($id, $status);
+        //         include 'bill/listbill.php';
+        //     break;
         //---------------------- xóa đơn hàng-------------------
-        case 'xoadh':
-            if (isset($_GET['id']) && ($_GET['id'] > 0)) {
-                delete_donhang($_GET['id']);
-            }
-            $listdonhang = loadall_donhang();
-            include 'bill/listbill.php';
-            break;
+        // case 'xoadh':
+        //     if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+        //         delete_donhang($_GET['id']);
+        //     }
+        //     $listdonhang = loadall_donhang();
+        //     include 'bill/listbill.php';
+        //     break;
 
 
 
@@ -209,6 +217,11 @@ if (isset($_GET['act'])) {
                 $listbl = loadall_binhluan();
             include 'binhluan/list.php';
                 break;
+            case 'thongke':
+                $dsthongke = load_thongke_sanpham_danhmuc();
+                include 'thongke/thongkesp.php';
+                break;
+                
 }} else {
     include 'home.php';
 }
