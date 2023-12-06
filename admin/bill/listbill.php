@@ -16,73 +16,83 @@ if (isset($_GET['id']) && isset($_GET['status'])) {
 ?>    
 <style>
     /* Định dạng bảng */
-.table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-}
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
 
-/* Định dạng header của bảng */
-.table th {
-  background-color: #f2f2f2;
-  text-align: center;
-  padding: 10px;
-  font-weight: bold;
-}
+    /* Định dạng header của bảng */
+    .table th {
+      background-color: #f2f2f2;
+      text-align: center;
+      padding: 8px;
+      font-weight: bold;
+    }
 
-/* Định dạng dòng chẵn của bảng */
-.table tr:nth-child(even) {
-  background-color: #f9f9f9;
-}
+    /* Định dạng dòng chẵn của bảng */
+    .table tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
 
-/* Định dạng dòng lẻ của bảng */
-.table tr:nth-child(odd) {
-  background-color: #ffffff;
-}
+    /* Định dạng dòng lẻ của bảng */
+    .table tr:nth-child(odd) {
+      background-color: #ffffff;
+    }
 
-/* Định dạng cột cuối cùng của bảng */
-.table td:last-child {
-  text-align: center;
-}
+    /* Định dạng cột cuối cùng của bảng */
+    .table td:last-child {
+      text-align: center;
+    }
 
-/* Định dạng select box */
-.form-select-sm {
-  padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
+    /* Định dạng select box */
+    .form-select-sm {
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
 
-/* Định dạng button */
-.btn {
-  padding: 8px 16px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-/* Định dạng button khi di chuột vào */
-.btn:hover {
-  background-color: #0056b3;
-}
-/* Định dạng phần tử cụ thể */
-.phan-tu-cu-the {
-  font-size: 16px;
-  color: #ff0000;
-  /* Thêm các thuộc tính CSS khác tại đây */
-}
-
-</style>
+    /* Định dạng button */
+    .btn {
+      padding: 8px 16px;
+      background-color: #007bff
+    }
+  </style>
 <div class="content-wrapper">
   <div class="content-header">
     <div class="container-fluid">
-
     <form action="<?= $_SERVER['REQUEST_URI'] ?>" method="POST">
-        <div class="card card-primary">
-            <div class="card-header">
-                <h3 class="card-title">Danh sách đơn hàng</h3>
-                </div>
+    <div class="card card-primary">
+        <div class="card-header">
+            <h3 class="card-title">Danh sách đơn hàng</h3>
+        </div>
+        <!-- Thêm bộ lọc ngày -->
+        <div>
+            <label for="start_date">Từ ngày:</label>
+            <input type="date" id="start_date" name="start_date">
+            <label for="end_date">Đến ngày:</label>
+            <input type="date" id="end_date" name="end_date">
+            <button type="submit" name="filter">Lọc Đơn</button>
+        </div>
+        <!-- Table start -->
+        <table class="table table-primary">
+            <!-- ... -->
+        </table>
+    </div>
+</form>
+<?php
+// Xử lý khi người dùng ấn nút lọc
+if (isset($_POST['filter'])) {
+    $start_date = $_POST['start_date'];
+    $end_date = $_POST['end_date'];
+    
+    // Thực hiện truy vấn SQL dựa trên khoảng thời gian được chọn và hiển thị kết quả
+    $sql = mysqli_query($con, "SELECT * FROM `tbl_order` WHERE ngaydathang BETWEEN '$start_date' AND '$end_date' ORDER BY `tbl_order`.`id_order` DESC");
+    $listdonhang = mysqli_fetch_all($sql, MYSQLI_ASSOC);
+    // Hiển thị kết quả tương ứng
+}
+?>
+
                 <!-- Table start -->
                 <table class="table table-primary">
                     <tr>                   
@@ -101,9 +111,9 @@ if (isset($_GET['id']) && isset($_GET['status'])) {
                         foreach($listdonhang as $key => $order) {
                             if($order['TrangthaiTT']==1)
                             {
-                                $tt = "đã thanh toán";
+                                $tt =  '<span style="color:#ff6547;">Đã Thanh Toán</span>';
                             }else{
-                                $tt = "Chưa thanh toán";
+                                $tt = '<span style="color:#3cb878;">Chưa thanh toán</span>';
                             }
                             ?>
                                 <tr>
@@ -160,11 +170,12 @@ if (isset($_GET['id']) && isset($_GET['status'])) {
     </form>
   </div>
 </div>
-
 <script>
     function changeStatus(value,id) {
         // alert(value);
         let url = "http://localhost/Duan1/admin/index.php?act=dsdonhang&";  
            window.location.href= url+"id="+id+"&status="+value;  
         }
+        
 </script>
+

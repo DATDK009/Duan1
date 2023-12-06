@@ -219,6 +219,7 @@ if (isset($_GET['act'])) {
                 break;
             case 'thongke':
                 $dsthongke = load_thongke_sanpham_danhmuc();
+                $doanhthu = load_bieudo();
                 include 'thongke/thongkesp.php';
                 break;
                 
