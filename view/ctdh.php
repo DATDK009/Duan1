@@ -62,8 +62,8 @@ $onedh = loadone_donhang();
                                                                     <td><span><?= $lsp['name']; ?></span></td>
                                                                     <td><img src="<?= $hinh; ?>" alt="" srcset=""></td>
                                                                     <td><span><?= $soluong; ?></span></td>
-                                                                    <td><span>$ <?= $giamua; ?></span></td>
-                                                                    <td><span>$ <?= $thanhtien ; ?></span></td>
+                                                                    <td><span>VNĐ <?= $giamua; ?></span></td>
+                                                                    <td><span><?= $thanhtien ; ?>VNĐ</span></td>
                                                                 </tr>
                                                                 <?php
                                                                     }
@@ -85,7 +85,7 @@ $onedh = loadone_donhang();
                                                                     <td class="border-color" colspan="1">
                                                                         <span><strong>VAT (5%)</strong></span></td>
                                                                     <td class="border-color">
-                                                                        <span><b>$ <?php
+                                                                        <span><b>VNĐ<?php
                                                                              
                                                                         ?></b></span></td>
                                                                 </tr>
@@ -99,7 +99,7 @@ $onedh = loadone_donhang();
                                                                         colspan="1"><span><strong>Total</strong></span>
                                                                     </td>
                                                                     <td class="border-color m-m15">
-                                                                        <span><b>$3872</b></span></td>
+                                                                        <span><b>3872VNĐ</b></span></td>
                                                                 </tr>
                                                             </tfoot>
                                                         </table>

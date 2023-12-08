@@ -84,7 +84,9 @@
                                         <h5 class="single-price">số lượng còn lại: <?=$soluong ?></h5>
                                         <div class="ec-single-price-stoke">
                                             <div class="ec-single-price">
-                                                <span class="new-price" style="color:red;"> <?=$price ?> VNĐ</span>
+                                            <span class="ec-price">
+                                                <span class="new-price" style="color:red;"> <?= number_format((int)$price, 0, ",", ".") ?> VNĐ</span>
+                                            </span>
                                             </div>
                                             
                                         </div>
@@ -127,7 +129,7 @@
                     <tr>
                     <td> <?php  echo $value['user']?></td>
 
-                        <td><?php echo $value['noidung']?></td>
+                        <td style ="width: 600px"><?php echo $value['noidung']?></td>
                        
                         <td><?php echo date("d/m/Y", strtotime($value['ngaybinhluan'])) ?></td>
                     </tr>
