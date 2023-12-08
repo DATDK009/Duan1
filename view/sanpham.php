@@ -64,8 +64,8 @@
                                                 <i class="ecicon eci-star"></i>
                                             </div>
                                             <span class="ec-price">
-                                                <span class="old-price"><?= $priceo ?> VNĐ</span>
-                                                <span class="new-price" style="color:red;"> <?= $price ?> VNĐ</span>
+                                                <span class="old-price"><?= number_format((int)$priceo, 0, ",", ".")  ?> VNĐ</span>
+                                                <span class="new-price" style="color:red;"> <?= number_format((int)$price, 0, ",", ".") ?> VNĐ</span>
                                             </span>
                                             <div class="ec-pro-option">
                                                 <div class="ec-pro-color">

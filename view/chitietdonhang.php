@@ -95,6 +95,7 @@ table.ec-table tbody tr:nth-of-type(odd) {
                                                         <div class="my-2"><b class="text-600">Phone : </b><?= $tel ?>
                                                         </div>
                                                     </div>
+                                                    
                                                 </div>
                                                 <!-- /.col -->
                                                 <!-- /.col -->
@@ -123,6 +124,7 @@ table.ec-table tbody tr:nth-of-type(odd) {
                                                                         if($t['id_order'] == $_GET['id']){
                                                                             $tongdh = $t['tongtien'];
                                                                             $statuss = $t['status'];
+                                                                            $tt = $t['TrangthaiTT'];
                                                                     foreach($onedh as $da)
                                                                     {
                                                                         $vat = $tongdh *0.05;
@@ -140,8 +142,8 @@ table.ec-table tbody tr:nth-of-type(odd) {
                                                                     <td><span><?= $lsp['name']; ?></span></td>
                                                                     <td><img src="<?= $hinh; ?>" alt="" width="80px" srcset=""></td>
                                                                     <td><span><?= $soluong; ?></span></td>
-                                                                    <td><span>$ <?= $giamua; ?></span></td>
-                                                                    <td><span>$ <?= $thanhtien ; ?></span></td>
+                                                                    <td><span> <?=number_format((int)$giamua, 0, ",", ".") ; ?> VNĐ</span></td>
+                                                                    <td><span><?= number_format((int)$thanhtien, 0, ",", ".")  ; ?> VNĐ</span></td>
                                                                 </tr>
                                                                 <?php
                                                                     }
@@ -170,7 +172,15 @@ table.ec-table tbody tr:nth-of-type(odd) {
                                                                         colspan="1"><span><strong>Total</strong></span>
                                                                     </td>
                                                                     <td class="border-color text-danger">
-                                                                        <span style="color=red;" ><b><?= $tongdh ?> VNĐ</b></span></td>
+                                                                        <span style="color=red;" ><b><?= number_format((int)$tongdh, 0, ",", ".") ?> VNĐ</b></span></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                    <div class="my-2">
+                                                        <?php if($tt==0){echo 'Chưa Thanh Toán';}else { echo 'Đã Thanh Toán' ;}
+                                                         ?>
+                                                        </div>
+                                                                    </td>
                                                                 </tr>
                                                                 <tr>
                                                                 <td>
@@ -185,6 +195,8 @@ table.ec-table tbody tr:nth-of-type(odd) {
                                                       {
                                                         
                                                       echo ' <button class="btn-danger" onclick="changeTT(1, '.$_GET['id'].')">Đã nhận đơn</button> ';
+                                                         }else{
+                                                            echo 'Đơn của bạn đã bị hủy!';
                                                          }
                                                   ?>
                                                   </td>
